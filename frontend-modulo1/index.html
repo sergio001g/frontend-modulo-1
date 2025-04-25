@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas Mejorada</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+</head>
+<body>
+
+    
+    <!-- Contenedor principal -->
+    <div class="container animate__animated animate__fadeIn">
+        <header class="app-header">
+            <h1><i class="fas fa-tasks"></i> Lista de Tareas</h1>
+            <div class="task-input-container">
+                <input type="text" id="taskInput" placeholder="Agregar nueva tarea..." autocomplete="off">
+                <button id="addTask" class="add-btn">
+                    <i class="fas fa-plus"></i> Agregar
+                </button>
+            </div>
+        </header>
+
+        <!-- Filtros -->
+        <div class="filters-container">
+            <select id="filterStatus" class="filter-select">
+                <option value="all">Todas las tareas</option>
+                <option value="active">Tareas activas</option>
+                <option value="completed">Tareas completadas</option>
+            </select>
+            <select id="filterPriority" class="filter-select">
+                <option value="all">Todas las prioridades</option>
+                <option value="high">Alta prioridad</option>
+                <option value="normal">Prioridad normal</option>
+                <option value="low">Baja prioridad</option>
+            </select>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="task-stats">
+            <div><i class="fas fa-list"></i> <span id="totalTasks">Total: 0</span></div>
+            <div><i class="fas fa-check-circle"></i> <span id="completedTasks">Completadas: 0</span></div>
+            <div><i class="fas fa-clock"></i> <span id="activeTasks">Activas: 0</span></div>
+        </div>
+
+        <!-- Contenedor de tareas -->
+        <div class="tasks-container">
+            <div class="tasks-section active-tasks">
+                <h2>Tareas Activas</h2>
+                <ul id="taskList" class="task-list"></ul>
+            </div>
+            <div class="tasks-section completed-tasks">
+                <h2>Tareas Completadas</h2>
+                <ul id="completedTaskList" class="task-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="developer-info">
+            <i class="fas fa-code"></i>
+            <span>Desarrollado con <i class="fas fa-heart"></i> por sergio001g</span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/theme.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
